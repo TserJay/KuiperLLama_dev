@@ -8,6 +8,7 @@ Hi，各位朋友们好！我是 KuiperInfer 的作者。KuiperInfer 作为一�
 https://tvle9mq8jh.feishu.cn/docx/AGb0dpqwfohQ9oxx4QycqbCjnJh
 ## 《动手自制大模型推理框架》课程优势
 
+
 1. 采用最新的C++ 20标准去写代码，统一、美观的代码风格，良好的错误处理；
 2. 优秀的项目管理形式，我们采用CMake+Git的方式管理项目，接轨大厂；
 3. 授人以渔，教大家怎么设计一个现代C++项目，同时教大家怎么用单元测试和Benchmark去测试验证自己的项目； 
