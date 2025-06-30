@@ -9,7 +9,7 @@ https://tvle9mq8jh.feishu.cn/docx/AGb0dpqwfohQ9oxx4QycqbCjnJh
 ## 《动手自制大模型推理框架》课程优势
 
 
-git
+
 
 
 1. 采用最新的C++ 20标准去写代码，统一、美观的代码风格，良好的错误处理；
