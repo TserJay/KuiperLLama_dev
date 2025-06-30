@@ -14,12 +14,6 @@ https://tvle9mq8jh.feishu.cn/docx/AGb0dpqwfohQ9oxx4QycqbCjnJh
 4. CPU算子和CUDA双后端实现，对时新的大模型（LLama3和Qwen系列）有非常好的支持。
 
 
-**如果你对大模型推理感兴趣，想要深入了解并掌握相关技术，想在校招、秋招面试当中脱颖而出，那么这门《动手自制大模型推理框架》课程绝对不容错过。快来加入我们，一起开启学习之旅吧！
-    感兴趣的同学欢迎扫一扫课程下方二维码或者添加微信 lyrry1997 参加课程**
-
-<img src="imgs/me.jpg"  />
-
-
 
 ## 《动手自制大模型推理框架》课程项目运行效果
 > LLama1.1b fp32模型，视频无加速，运行平台为Nvidia 3060 laptop，速度为60.34 token/s
