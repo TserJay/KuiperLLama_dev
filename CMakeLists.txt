@@ -2,6 +2,11 @@ cmake_minimum_required(VERSION 3.16)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+# 手动指定 CUDA 包的路径
+include_directories(/usr/local/cuda/include)
+
+
+
 # Set the CUDA compiler path or name
 set(CMAKE_CUDA_COMPILER "/usr/local/cuda/bin/nvcc")
 
