@@ -6,7 +6,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include_directories(/usr/local/cuda/include)
 
 
-
 # Set the CUDA compiler path or name
 set(CMAKE_CUDA_COMPILER "/usr/local/cuda/bin/nvcc")
 
