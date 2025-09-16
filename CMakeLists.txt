@@ -1,13 +1,15 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.21)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# 手动指定 CUDA 包的路径
-include_directories(/usr/local/cuda/include)
+## Set the CUDA compiler path or name
+#set(CMAKE_CUDA_COMPILER "/usr/local/cuda/bin/nvcc")
 
+# 必须使用完整路径,WSL环境中nvcc目录
+set(CMAKE_CUDA_COMPILER "/usr/local/cuda-12.5/bin/nvcc")
 
-# Set the CUDA compiler path or name
-set(CMAKE_CUDA_COMPILER "/usr/local/cuda/bin/nvcc")
+set(CMAKE_CUDA_ARCHITECTURES 75)
+
 
 project(llama_infer CXX CUDA)
 include(cmake/cuda.cmake)
@@ -42,47 +44,47 @@ if(USE_CPM)
   include(cmake/CPM.cmake)
 
   CPMAddPackage(
-    NAME GTest
-    GITHUB_REPOSITORY google/googletest
-    VERSION 1.15.0
+          NAME GTest
+          GITHUB_REPOSITORY google/googletest
+          VERSION 1.15.0
   )
 
   CPMAddPackage(
-    NAME glog
-    GITHUB_REPOSITORY google/glog
-    VERSION 0.7.1
-    OPTIONS "BUILD_TESTING Off"
+          NAME glog
+          GITHUB_REPOSITORY google/glog
+          VERSION 0.7.1
+          OPTIONS "BUILD_TESTING Off"
   )
 
   CPMAddPackage(
-    NAME Armadillo
-    GITLAB_REPOSITORY conradsnicta/armadillo-code
-    GIT_TAG 14.0.1
+          NAME Armadillo
+          GITLAB_REPOSITORY conradsnicta/armadillo-code
+          GIT_TAG 14.0.1
   )
 
   CPMAddPackage(
-    NAME sentencepiece
-    GITHUB_REPOSITORY google/sentencepiece
-    VERSION 0.2.0
+          NAME sentencepiece
+          GITHUB_REPOSITORY google/sentencepiece
+          VERSION 0.2.0
   )
   find_package(sentencepiece REQUIRED)
 
   if (LLAMA3_SUPPORT OR QWEN2_SUPPORT OR QWEN3_SUPPORT)
     CPMAddPackage(
-        NAME absl
-        GITHUB_REPOSITORY abseil/abseil-cpp
-        GIT_TAG 20240722.0
-        OPTIONS "BUILD_TESTING Off" "ABSL_PROPAGATE_CXX_STD ON" "ABSL_ENABLE_INSTALL ON"
+            NAME absl
+            GITHUB_REPOSITORY abseil/abseil-cpp
+            GIT_TAG 20240722.0
+            OPTIONS "BUILD_TESTING Off" "ABSL_PROPAGATE_CXX_STD ON" "ABSL_ENABLE_INSTALL ON"
     )
     CPMAddPackage(
-        NAME re2
-        GITHUB_REPOSITORY google/re2
-        GIT_TAG 2024-07-02
+            NAME re2
+            GITHUB_REPOSITORY google/re2
+            GIT_TAG 2024-07-02
     )
     CPMAddPackage(
-        NAME nlohmann_json
-        GITHUB_REPOSITORY nlohmann/json
-        VERSION 3.11.3
+            NAME nlohmann_json
+            GITHUB_REPOSITORY nlohmann/json
+            VERSION 3.11.3
     )
   endif()
 endif()
