@@ -10,3 +10,6 @@ int main(int argc, char* argv[]) {
   LOG(INFO) << "Start Test...\n";
   return RUN_ALL_TESTS();
 }
+
+
+// test main
