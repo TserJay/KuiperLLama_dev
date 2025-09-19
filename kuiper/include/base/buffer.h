@@ -7,7 +7,7 @@ class Buffer : public NoCopyable, std::enable_shared_from_this<Buffer> {
  private:
   size_t byte_size_ = 0;
   void* ptr_ = nullptr;
-  bool use_external_ = false;
+  bool use_external_ = false; // 是否拥有这块buffer的所有权力，在Buffer类结束的时候是否需要去释放内存（显存），Default = false 表示默认拥有这块buffer
   DeviceType device_type_ = DeviceType::kDeviceUnknown;
   std::shared_ptr<DeviceAllocator> allocator_;
 

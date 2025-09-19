@@ -29,6 +29,7 @@ base::Status BaseLayer::set_weight(int32_t idx, const std::vector<int32_t>& dims
 const std::string& BaseLayer::get_layer_name() const { return layer_name_; }
 
 void BaseLayer::set_layer_name(const std::string& layer_name) { layer_name_ = layer_name; }
+
 base::DeviceType BaseLayer::device_type() const { return device_type_; }
 
 void BaseLayer::set_device_type(base::DeviceType device_type) { device_type_ = device_type; }

@@ -17,7 +17,7 @@ TEST(test_buffer, use_external) {
   float* ptr = new float[32];
   Buffer buffer(32, nullptr, ptr, true);
   ASSERT_EQ(buffer.is_external(), true);
-  delete[] ptr;
+  delete[] ptr; // 手动释放内存空间
 }
 
 TEST(test_buffer, cuda_memcpy1) {

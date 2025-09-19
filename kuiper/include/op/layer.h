@@ -51,6 +51,8 @@ class BaseLayer {
                                const tensor::Tensor& input3, const tensor::Tensor& input4,
                                const tensor::Tensor& input5, const tensor::Tensor& output1) = 0;
 
+
+
   virtual void set_input(int32_t idx, const tensor::Tensor& input) = 0;
 
   virtual void set_output(int32_t idx, const tensor::Tensor& output) = 0;
@@ -75,19 +77,19 @@ class BaseLayer {
                                   const void* weight_ptr,
                                   base::DeviceType device_type = base::DeviceType::kDeviceUnknown);
 
-  const std::string& get_layer_name() const;
+  const std::string& get_layer_name() const; // 返回层类型
 
-  void set_layer_name(const std::string& layer_name);
+  void set_layer_name(const std::string& layer_name); // 设定层名称
 
-  base::DeviceType device_type() const;
+  base::DeviceType device_type() const; // 返回层的类型
 
   void set_device_type(base::DeviceType device_type);
 
  protected:
-  std::string layer_name_;
-  LayerType layer_type_ = LayerType::kLayerUnknown;
-  base::DataType data_type_ = base::DataType::kDataTypeUnknown;
-  base::DeviceType device_type_ = base::DeviceType::kDeviceUnknown;
+  std::string layer_name_;  // 层名
+  LayerType layer_type_ = LayerType::kLayerUnknown; // 层类型
+  base::DataType data_type_ = base::DataType::kDataTypeUnknown; // 层数据类型
+  base::DeviceType device_type_ = base::DeviceType::kDeviceUnknown; // 返回层设备类型
 };
 
 class Layer : public BaseLayer {
@@ -121,9 +123,9 @@ class Layer : public BaseLayer {
   base::Status forward(const tensor::Tensor& input1, const tensor::Tensor& input2,
                        const tensor::Tensor& input3, const tensor::Tensor& input4,
                        const tensor::Tensor& input5, const tensor::Tensor& output1) override;
-
+  // 第0个位置的传入值x: set_input(0,x)
   void set_input(int32_t idx, const tensor::Tensor& input) override;
-
+  // 第0个位置的输出值x: out_input(0,y)
   void set_output(int32_t idx, const tensor::Tensor& output) override;
 
   const tensor::Tensor& get_input(int32_t idx) const override;
