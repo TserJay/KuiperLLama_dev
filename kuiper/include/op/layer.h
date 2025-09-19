@@ -127,7 +127,7 @@ class Layer : public BaseLayer {
   void set_input(int32_t idx, const tensor::Tensor& input) override;
   // 第0个位置的输出值x: out_input(0,y)
   void set_output(int32_t idx, const tensor::Tensor& output) override;
-
+  //
   const tensor::Tensor& get_input(int32_t idx) const override;
 
   const tensor::Tensor& get_output(int32_t idx) const override;
