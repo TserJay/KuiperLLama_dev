@@ -9,6 +9,7 @@ TEST(test_tensor, to_cpu) {
   using namespace base;
   auto alloc_cu = CUDADeviceAllocatorFactory::get_instance();
   tensor::Tensor t1_cu(DataType::kDataTypeFp32, 32, 32, true, alloc_cu);
+  printf("ending....\n");
   ASSERT_EQ(t1_cu.is_empty(), false);
   set_value_cu(t1_cu.ptr<float>(), 32 * 32);
 

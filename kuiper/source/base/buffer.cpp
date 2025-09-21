@@ -16,6 +16,7 @@ Buffer::Buffer(size_t byte_size, std::shared_ptr<DeviceAllocator> allocator, voi
 }
 
 Buffer::~Buffer() {
+  printf("buffer release.....\n");
   if (!use_external_) {
     if (ptr_ && allocator_) {
       allocator_->release(ptr_);
