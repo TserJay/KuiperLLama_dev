@@ -4,15 +4,21 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 ## Set the CUDA compiler path or name
 #set(CMAKE_CUDA_COMPILER "/usr/local/cuda/bin/nvcc")
-
 # 必须使用完整路径,WSL环境中nvcc目录
-set(CMAKE_CUDA_COMPILER "/usr/local/cuda-12.5/bin/nvcc")
+set(CMAKE_CUDA_COMPILER "/usr/local/cuda-13.1/bin/nvcc")
 
-set(CMAKE_CUDA_ARCHITECTURES 75)
+#set(CMAKE_CUDA_ARCHITECTURES "120" CACHE STRING "CUDA Architectures" FORCE)
+#set(CMAKE_CUDA_FLAGS "--generate-code=arch=compute_120,code=sm_120" CACHE STRING "CUDA Flags" FORCE)
 
+
+
+#set(CMAKE_CUDA_ARCHITECTURES "120")
+#set(CMAKE_CUDA_ARCHITECTURES 75)  20系显卡架构
 
 project(llama_infer CXX CUDA)
 include(cmake/cuda.cmake)
+
+
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 17)
